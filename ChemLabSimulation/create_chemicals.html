@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Lab Simulation</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            font-family: Arial, sans-serif;
+            background-color: #e6f7ff;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            text-align: center;
+        }
+        header {
+            background-color: #3a3a4a;
+            color: #74c365;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 0 10px 0;
+            right: 0px;
+            position: absolute;
+            width: 90%;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            height: 90%;
+            
+        }
+        .inventory {
+            width: 20%;
+            background-color: #3a3a4a;
+            border-right: 2px solid black;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            position: relative;
+        }
+        .inventory h2 {
+            margin: 0 0 10px 0;
+            text-align: center;
+            position: relative;
+        }
+        .item {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: grab;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+        .item img {
+            max-width: 80px;
+            max-height: 80px;
+        }
+        .item span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 14px;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .info-box {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+            font-size: 14px;
+            max-width: 200px;
+            text-align: center;
+        }
+        .main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0faff;
+        }
+        .table {
+            width: 80%;
+            height: 400px;
+            border: 2px solid black;
+            border-radius: 8px;
+            position: relative;
+            background-color: #fff3e6;
+            overflow: hidden;
+        }
+        .beaker {
+            position: absolute;
+            border: 10px solid #000000;
+            border-top: 0;
+            border-radius: 0 0 30px 30px;
+            height: 200px;
+            left: 49%;
+            bottom: 10px;
+            width: 200px;
+            transform: translateX(-50%);
+            background: transparent;
+        }
+        #beaker:before,
+        #beaker:after {
+            border: 10px solid #000000;
+            border-bottom: 0;
+            border-radius: 30px 30px 0 0;
+            content: '';
+            height: 30px;
+            position: absolute;
+            top: -39px;
+            width: 31px;
+}
+
+#beaker:before { left: -50px; }
+#beaker:after { right: -50px; }
+
+        .liquid {
+            width: 200px;
+            height: 0;
+            position: absolute;
+            bottom: 0;
+            background-color: blue;
+            transition: height 1s ease-in-out;
+            border-radius: 0 0 30px 30px;
+        }
+        .beaker-label {
+            position: absolute;
+            top: -60px;
+            right: 70px;
+            font-weight: bold;
+            font-size: 16px;
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .bubble {
+            width: 20px;
+            height: 20px;
+            background-color: rgba(255, 0, 0, 0.5);
+            border-radius: 50%;
+            position: absolute;
+            animation: bubble 2s infinite;
+            display: none;
+        }
+        @keyframes bubble {
+            from { transform: translateY(0); opacity: 1; }
+            to { transform: translateY(-50px); opacity: 0; }
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #3a3a4a;
+            color: white;
+        }
+        .mixing {
+            animation: mix 0.5s infinite alternate;
+        }
+        @keyframes mix {
+            from { transform: translateX(-50%) rotate(-5deg); }
+            to { transform: translateX(-50%) rotate(5deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Chemistry VirtuaLab
+    </header>
+<div class="inventory">
+    <h2>Inventory</h2>
+    <div class="item" draggable="true" id="chemical1"onmouseover="showInfo('Phenolphthalein: pH indicator, turns pink in basic solutions.')" onmouseout="hideInfo()"><img src="images/phenolphthalein.png" alt="Phenolphthalein"><span>Phenolphthalein Solution</span></div>
+    <div class="item" draggable="true" id="chemical2" onmouseover="showInfo('NaOH: A strong base, commonly used in neutralization reactions.')" onmouseout="hideInfo()"><img src="images/naoh.png" alt="NaOH Solution"><span>Sodium Hydroxide (NaOH) Solution</span></div>
+    <div class="item" draggable="true" id="chemical3"onmouseover="showInfo('HCl: A strong acid, reacts vigorously with bases.')" onmouseout="hideInfo()"><img src="images/hcl.png" alt="HCl Solution"><span>Hydrochloric Acid (HCl) Solution</span></div>
+    <div class="item" draggable="true" id="chemical4" onmouseover="showInfo('H2O: Pure distilled water, neutral pH.')" onmouseout="hideInfo()"><img src="images/water.png" alt="Water"><span>H₂O</span></div>
+</div>
+    <div class="main">
+        <div class="table" id="table">
+            <div class="beaker" id="beaker">
+                <div class="beaker-label">Beaker</div>
+                <div class="liquid" id="liquid"></div>
+            </div>
+            <div class="bubble" id="bubble"></div>
+        </div>
+        <div class="buttons">
+            <button onclick="undoLastPour()">Undo</button>
+            <button onclick="location.href='index.html'">Back to Homepage</button>
+            <button onclick="mixContents()">Mix</button>
+        </div>
+    </div>
+    <div class="info-box" id="infoBox"></div>
+    <script>
+        let draggedItem = null;
+        let liquidLevel = 0;
+        let colorMix = [];
+        let lastColor = null;
+
+        document.querySelectorAll('.item').forEach(item => {
+            item.addEventListener('dragstart', function(event) {
+                draggedItem = event.target.id;
+            });
+        });
+
+        document.getElementById('table').addEventListener('dragover', function(event) {
+            event.preventDefault();
+        });
+
+        document.getElementById('table').addEventListener('drop', function(event) {
+            event.preventDefault();
+            if (draggedItem.startsWith('chemical')) {
+                let liquid = document.getElementById('liquid');
+                lastColor = liquid.style.backgroundColor;
+                liquidLevel = Math.min(100, liquidLevel + 20);
+                liquid.style.height = liquidLevel + '%';
+                let colors = { chemical1: 'blue', chemical2: 'red', chemical3: 'yellow' };
+                colorMix.push(colors[draggedItem]);
+                let mixedColor = colorMix.length > 1 ? 'purple' : colors[draggedItem];
+                liquid.style.backgroundColor = mixedColor;
+            }
+        });
+
+        function undoLastPour() {
+            let liquid = document.getElementById('liquid');
+            if (liquidLevel > 0) {
+                liquidLevel = Math.max(0, liquidLevel - 20);
+                liquid.style.height = liquidLevel + '%';
+                colorMix.pop();
+                liquid.style.backgroundColor = lastColor || 'transparent';
+            }
+        }
+
+        function mixContents() {
+            let beaker = document.getElementById('beaker');
+            beaker.classList.add('mixing');
+            setTimeout(() => beaker.classList.remove('mixing'), 2000);
+        }
+        function showInfo(text) {
+            let infoBox = document.getElementById('infoBox');
+            infoBox.innerText = text;
+            infoBox.style.display = 'inline';
+        }
+        function hideInfo() {
+            let infoBox = document.getElementById('infoBox');
+            infoBox.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

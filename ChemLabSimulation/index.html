@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry VirtuaLab</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #dff6ff;
+            text-align: center;
+            margin: 0;
+        }
+        header {
+            background-color: #3a3a4a;
+            color: #74c365;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding: 50px;
+        }
+        .card {
+            width: 250px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Chemistry VirtuaLab
+    </header>
+    <div class="container">
+        <div class="card" onclick="location.href='create_chemicals.html'">
+            <img src="images/chemicals.png" alt="Create Chemicals">
+            <h3>Create Chemicals</h3>
+            <p>A simulation of a chemistry laboratory.</p>
+        </div>
+        <div class="card" onclick="location.href='molecules.html'">
+            <img src="images/molecules.png" alt="Interact with Molecules">
+            <h3>Interact with Molecules</h3>
+            <p>Learn the different types of molecules.</p>
+        </div>
+        <div class="card" onclick="location.href='learning.html'">
+            <img src="images/learning.png" alt="Interactive Learning">
+            <h3>Interactive Learning</h3>
+            <p>Learn in an interactive way! Know what chemicals are and their uses.</p>
+        </div>
+    </div>
+</body>
+</html>
