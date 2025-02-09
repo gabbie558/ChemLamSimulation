@@ -1,0 +1,11 @@
+Model Information:
+* title:	Caffeine
+* source:	https://sketchfab.com/3d-models/caffeine-dfe47c654f2b42a498bc8aa01ad2edb7
+* author:	tonibois (https://sketchfab.com/tonibois)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Caffeine" (https://sketchfab.com/3d-models/caffeine-dfe47c654f2b42a498bc8aa01ad2edb7) by tonibois (https://sketchfab.com/tonibois) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)

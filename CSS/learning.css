@@ -1,0 +1,83 @@
+body{
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #ADD8E6;
+}
+
+header {
+  background-color: #3a3a4a;
+  color: #74c365;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  position: fixed; /* Sticks header to the top */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Keeps header above other elements */
+}
+
+header h1 {
+  font-size: 2em;
+  font-weight: 900;
+  color: #74c365; /* Green text */
+  margin: 0;
+}
+
+
+
+.menu-button {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: center;
+  justify-content: center;
+  position: absolute; /* Positioning relative to the page */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Perfectly center */
+  gap: 20px; /* Space between buttons */
+}
+
+.menu-button button {
+  background-color: #1976d2; /* Vibrant blue */
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: 250px; /* Uniform button width */
+  text-align: center;
+}
+
+.menu-button button:hover {
+  background-color: #0d47a1; /* Darker blue */
+}
+
+
+#controls-button {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+#controls-button button {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: 200px;
+}
+
+#controls-button button:hover {
+  background-color: #0d47a1;
+}
