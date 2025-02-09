@@ -10,6 +10,37 @@
     <header>
         Chemistry VirtuaLab
     </header>
+
+    <button id="helpButton">Need Help?</button>
+
+    <!-- Modal -->
+    <!-- Modal -->
+<div id="helpModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>How to Use Chemistry VirtuaLab</h2>
+        <p>Welcome to Chemistry VirtuaLab! Here’s how you can use this platform:</p>
+        
+        <div class="modal-instructions">
+            <div class="instruction">
+                <img src="../ChemLabSimulation/images/lab.png" alt="Create Chemicals" style="width: 100px;">
+                <p><strong>Create Chemicals:</strong> Simulate chemical reactions.</p>
+            </div>
+            <div class="instruction">
+                <img src="../ChemLabSimulation/images/lab.png" alt="Interact with Molecules">
+                <p><strong>Interact with Molecules:</strong> Explore different molecular structures.</p>
+            </div>
+            <div class="instruction">
+                <img src="../ChemLabSimulation/images/interact.png" alt="Interactive Learning">
+                <p><strong>Interactive Learning:</strong> Learn about chemicals in a fun way.</p>
+            </div>
+        </div>
+
+        <p>Click on any card to start!</p>
+    </div>
+</div>
+
+
     <div class="container">
         <div class="card" onclick="location.href='create_chemicals.html'">
             <img src="../ChemLabSimulation/images/chemicals.png" alt="Create Chemicals">
@@ -27,5 +58,7 @@
             <p>Learn in an interactive way! Know what chemicals are and their uses.</p>
         </div>
     </div>
+
+    <script src="../JS/index.js"></script>
 </body>
 </html>
