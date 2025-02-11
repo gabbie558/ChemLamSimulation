@@ -1,0 +1,121 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 60%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Atoms Container */
+.atoms {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Atom Styling */
+.atom {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: grab;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Atom Colors */
+#H { background: #ff4b5c; color: white; }  /* Red for Hydrogen */
+#O { background: #4bafff; color: white; }  /* Blue for Oxygen */
+#C { background: #ffbb33; color: black; }  /* Yellow for Carbon */
+
+/* Atom Hover Effect */
+.atom:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.4);
+}
+
+/* Dropzone */
+.dropzone {
+    width: 350px;
+    height: 150px;
+    margin: auto;
+    border: 3px dashed rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    transition: border-color 0.3s ease;
+}
+
+/* Dropzone Hover Effect */
+.dropzone:hover {
+    border-color: #ffbb33;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Dropped Atoms */
+.dropzone .atom {
+    background-color: #7bed9f; /* Green for placed atoms */
+}
+
+/* Button Styling */
+button {
+    background: #ffbb33;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #ffaa00;
+    transform: scale(1.05);
+}
+
+/* Result Message */
+#result {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* Success & Error Messages */
+#result:contains("✅") {
+    color: #7bed9f;
+}
+
+#result:contains("❌") {
+    color: #ff4b5c;
+}

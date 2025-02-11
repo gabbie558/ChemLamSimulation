@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molecule Builder Game</title>
+    <link rel="stylesheet" href="../moleculegame/styles.css">
+</head>
+<body>
+        <header>
+            <h1>Interact Molecule</h1> 
+            <button onclick="location.href='index.html'">Back to Homepage</button>
+        </header>
+        <a>Need help?</a>
+
+    <div class="atoms">
+        <div class="atom" draggable="true" id="H">H</div>
+        <div class="atom" draggable="true" id="O">O</div>
+        <div class="atom" draggable="true" id="C">C</div>
+    </div>
+    <p>Drop Atoms Here</p>
+    <div class="dropzone">
+       
+    </div>
+
+    <button onclick="checkMolecule()">Check Molecule</button>
+    <p id="result"></p>
+
+
+    <div class="trash-button">   
+        <button>trash</button>
+    
+    </div>
+
+    <script src="../moleculegame/script.js"></script>
+</body>
+</html>
