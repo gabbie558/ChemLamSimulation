@@ -1,6 +1,8 @@
 const atoms = document.querySelectorAll('.atom');
 const dropzone = document.querySelector('.dropzone');
-const result = document.getElementById('result');
+const modal = document.getElementById('modal');
+const modalText = document.getElementById('modal-text');
+const closeModal = document.getElementById('close-modal');
 
 // Store original colors
 const atomColors = {
@@ -52,17 +54,33 @@ function checkMolecule() {
 
     console.log("Formed Molecule:", molecule); // Debugging
 
+    let resultMessage = 'Invalid molecule ❌';
+
     if (molecule === 'HHO') {
-        result.textContent = 'You made Water (H₂O)! ✅';
+        resultMessage = 'You made Water (H₂O)! ✅';
     } else if (molecule === 'COO') {
-        result.textContent = 'You made Carbon Dioxide (CO₂)! ✅';
+        resultMessage = 'You made Carbon Dioxide (CO₂)! ✅';
     } else if (molecule === 'CO') {
-        result.textContent = 'You made Carbon Monoxide (CO)! ✅';
+        resultMessage = 'You made Carbon Monoxide (CO)! ✅';
     } else if (molecule === 'CHHHH') {
-        result.textContent = 'You made Methane (CH₄)! ✅';
+        resultMessage = 'You made Methane (CH₄)! ✅';
     } else if (molecule === 'CCHHHHHHO') {
-        result.textContent = 'You made Ethanol (C₂H₆O)! ✅';
-    } else {
-        result.textContent = 'Invalid molecule ❌';
+        resultMessage = 'You made Ethanol (C₂H₆O)! ✅';
     }
+
+    // Display result in modal
+    modalText.textContent = resultMessage;
+    modal.style.display = 'block';
 }
+
+// Close modal
+closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+// Close modal when clicking outside of it
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+});
