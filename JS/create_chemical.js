@@ -90,3 +90,14 @@ function hideInfo() {
     let infoBox = document.getElementById('infoBox');
     infoBox.style.display = 'none';
 }
+
+// Show Help Modal
+document.querySelector("header a").addEventListener("click", function(event) {
+    event.preventDefault();
+    document.getElementById("helpModal").style.display = "block";
+});
+
+// Close Help Modal
+function closeHelp() {
+    document.getElementById("helpModal").style.display = "none";
+}
