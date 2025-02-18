@@ -1,7 +1,9 @@
-body{
+body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
-  background-color: #ADD8E6;
+  background-color: #ADD8E6; /* Light blue background */
+  padding-top: 80px; /* Prevents content from being hidden under the fixed header */
+  overflow: hidden; /* Removes scrolling */
 }
 
 header {
@@ -25,48 +27,15 @@ header h1 {
   margin: 0;
 }
 
-
-
-.menu-button {
-  display: flex;
-  flex-direction: column; /* Stack buttons vertically */
-  align-items: center;
-  justify-content: center;
-  position: absolute; /* Positioning relative to the page */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Perfectly center */
-  gap: 20px; /* Space between buttons */
-}
-
-.menu-button button {
-  background-color: #1976d2; /* Vibrant blue */
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  width: 250px; /* Uniform button width */
-  text-align: center;
-}
-
-.menu-button button:hover {
-  background-color: #0d47a1; /* Darker blue */
-}
-
-
 #controls-button {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 #controls-button button {
-  background-color: #1976d2;
+  background-color: #81acd6;
   color: white;
   border: none;
   padding: 15px 30px;
@@ -79,5 +48,49 @@ header h1 {
 }
 
 #controls-button button:hover {
-  background-color: #0d47a1;
+  background-color: #6c83a7;
+}
+
+.container {
+  margin-top: 350px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  width: 250px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 10px 0;
+  padding: 10px;
+  background: #3a3a4a;
+  color: #74c365;
+  font-size: 18px;
+}
+
+.card p {
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
 }

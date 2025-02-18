@@ -1,0 +1,260 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 60%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Atoms Container */
+.atoms {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Atom Styling */
+.atom {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: grab;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Atom Colors */
+#H { background: #ff4b5c; color: white; }  /* Red for Hydrogen */
+#O { background: #4bafff; color: white; }  /* Blue for Oxygen */
+#C { background: #ffbb33; color: black; }  /* Yellow for Carbon */
+
+/* Atom Hover Effect */
+.atom:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.4);
+}
+
+/* Dropzone */
+.dropzone {
+    width: 350px;
+    height: 150px;
+    margin: auto;
+    border: 3px dashed rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    transition: border-color 0.3s ease;
+}
+
+/* Dropzone Hover Effect */
+.dropzone:hover {
+    border-color: #ffbb33;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Dropped Atoms */
+.dropzone .atom {
+    background-color: #7bed9f; /* Green for placed atoms */
+}
+
+#trash-button {
+    position: fixed; 
+    bottom: 20px;
+    left: 20px;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+    border-radius: 40px;
+}
+
+#trash-button:hover {
+    transform: scale(1.1);  
+    opacity: 0.8; 
+
+}
+#check-button {
+    background: #ffbb33;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#check-button:hover {
+    background: #ffaa00;
+    transform: scale(1.05);
+}
+
+/* Result Message */
+#result {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* Success & Error Messages */
+#result:contains("✅") {
+    color: #7bed9f;
+}
+
+#result:contains("❌") {
+    color: #ff4b5c;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    background: linear-gradient(to right, #222f47, #5e8abd);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-height: 90vh; /* Prevents overflow */
+    
+}
+
+.modal-content {
+    position: relative;
+    padding: 20px;
+    width: 100%;
+}
+
+#modal-image {
+    max-width: 150px;
+    display: block;
+    margin: 10px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: #ff4b5c;
+}
+
+/* Ensure images inside modal remain centered */
+#modal-image, #modal-pic, #modal-tuts {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+.help-button{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+}
+#next-help, #prev-help {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+}
+
+.help-button:hover {
+    background-color: #0056b3;
+}
+
+#modal-pic {
+    max-width: 100px;  /* Adjust this size as needed */
+    max-height: 200px; /* Ensure it doesn't get too large */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 10px auto; /* Center the image */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+
+#help-modal .modal-content {
+    position: relative;
+}
+
+#help-page-1, #help-page-2 {
+    transition: opacity 0.3s ease-in-out;
+}
+
+#modal-ethan{
+    font-size: 15px;
+
+}
+
+#modal-tuts{
+    max-width: 400px;  /* Adjust this size as needed */
+    max-height: 200px; /* Ensure it doesn't get too large */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 10px auto; /* Center the image */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+}

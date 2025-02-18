@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molecule Builder Game</title>
+    <link rel="stylesheet" href="../moleculegame/styles.css">
+</head>
+<body>
+        <header>
+            <h1>Interact Molecule</h1> 
+            <button id="check-button" onclick="location.href='index.html'">Back to Homepage</button>
+        </header>
+        <button id="help-button" class="help-button">Need Help?</button>
+
+       <!-- Help Modal -->
+<div id="help-modal" class="modal">
+    <div class="modal-content">
+        <span id="close-help-modal" class="close">&times;</span>
+
+        <!-- Page 1: Introduction -->
+        <div id="help-page-1">
+            <h2>How to Play</h2>
+            <p>Drag atoms into the drop zone to form molecules. Click "Check Molecule" to see if you've created a valid compound.</p>
+            <img id="modal-tuts" src="../ChemLabSimulation/images/tuts2.png" alt="Molecule Game" class="help-image">
+
+            <p>Use the trash button to clear the drop zone.</p>
+            <img id="modal-tuts" src="../ChemLabSimulation/images/tuts.png" alt="Molecule Game" class="help-image">
+            <button id="next-help">Next ➡</button>
+        </div>
+
+        <!-- Page 2: Atoms & Valid Molecules -->
+        <div id="help-page-2" style="display: none;">
+            <h2>Atoms & Molecules</h2>
+            <p>Each element has a symbol:</p>
+            <p><strong>H</strong> = Hydrogen</p>
+            <img id="modal-pic"src="../ChemLabSimulation/images/hydrogen.jpg" alt="Hydrogen" class="help-image">
+            <p><strong>C</strong> = Carbon</p>
+            <img id="modal-pic" src="../ChemLabSimulation/images/carbon.jpg" alt="Carbon" class="help-image">
+            <p><strong>O</strong> = Oxygen</p>
+            <img id="modal-pic" src="../ChemLabSimulation/images/oxygen.jpg" alt="Oxygen" class="help-image">
+
+            <h3>Valid Molecules:</h3>
+            <ul>
+                <li><strong>Water (H₂O)</strong>: H + H + O</li>
+                <li><strong>Carbon Dioxide (CO₂)</strong>: C + O + O</li>
+                <li><strong>Methane (CH₄)</strong>: C + H + H + H + H</li>
+                <li id="modal-ethan"><strong>Ethanol (C₂H₆O)</strong>:C + C + H + H + H + H + H + H + O </li>
+                <li><strong>Hydrogen Peroxide (H₂O₂)</strong>: H + H + O + O</li>
+                
+            </ul>
+
+            <button id="prev-help">⬅ Back</button>
+        </div>
+    </div>
+</div>
+
+        
+
+    <div class="atoms">
+        
+        <div class="atom" draggable="true" id="O">O</div>
+        <div class="atom" draggable="true" id="C">C</div>
+        <div class="atom" draggable="true" id="H">H</div>
+    </div>
+    <p>Drop Atoms Here</p>
+    <div class="dropzone">
+       
+    </div>
+
+    <button onclick="checkMolecule()" id="check-button">Check Molecule</button>
+    <p id="result"></p>
+
+    <!-- Result Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <p id="modal-text"></p>
+            <img id="modal-image" style="max-width: 100px; display: none;"> <!-- Image -->
+        </div>
+    </div>
+
+
+      
+        <img id="trash-button" src="../ChemLabSimulation/images/trash.webp" alt="trash" />
+
+    <script src="../moleculegame/script.js"></script>
+</body>
+</html>

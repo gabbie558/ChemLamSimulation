@@ -1,0 +1,11 @@
+Model Information:
+* title:	Single Ammonia Molecule
+* source:	https://sketchfab.com/3d-models/single-ammonia-molecule-3b0b8614494d4fd2b6a4c619b43471f4
+* author:	Michael Aristov (https://sketchfab.com/Michael.Aristov)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Single Ammonia Molecule" (https://sketchfab.com/3d-models/single-ammonia-molecule-3b0b8614494d4fd2b6a4c619b43471f4) by Michael Aristov (https://sketchfab.com/Michael.Aristov) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
