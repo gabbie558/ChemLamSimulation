@@ -8,15 +8,27 @@
 <body>
     <header>
         Chemistry VirtuaLab
-        <a href="#" id="helpLink"> <h5>Need Help?</h5> </a>
     </header>
-<div class="inventory">
-    <h2>Inventory</h2>
-    <div class="item" draggable="true" id="chemical1"onmouseover="showInfo('Phenolphthalein: pH indicator, turns pink in basic solutions.')" onmouseout="hideInfo()"><img src="../ChemLabSimulation/images/phenolphthalein.png" alt="Phenolphthalein"><span>Phenolphthalein Solution</span></div>
-    <div class="item" draggable="true" id="chemical2" onmouseover="showInfo('NaOH: A strong base, commonly used in neutralization reactions.')" onmouseout="hideInfo()"><img src="../ChemLabSimulation/images/naoh.png" alt="NaOH Solution"><span>Sodium Hydroxide (NaOH) Solution</span></div>
-    <div class="item" draggable="true" id="chemical3"onmouseover="showInfo('HCl: A strong acid, reacts vigorously with bases.')" onmouseout="hideInfo()"><img src="../ChemLabSimulation/images/hcl.png" alt="HCl Solution"><span>Hydrochloric Acid (HCl) Solution</span></div>
-    <div class="item" draggable="true" id="chemical4" onmouseover="showInfo('H2O: Pure distilled water, neutral pH.')" onmouseout="hideInfo()"><img src="../ChemLabSimulation/images/water.png" alt="Water"><span>H₂O</span></div>
-</div>
+    <div class="inventory">
+        <h2>Inventory</h2>
+        <div class="item" draggable="true" id="chemical1">
+            <img src="../ChemLabSimulation/images/water.png" alt="Water">
+            <span>H₂O</span>
+        </div>
+        <div class="item" draggable="true" id="chemical2">
+            <img src="../ChemLabSimulation/images/naoh.png" alt="NaOH">
+            <span>NaOH</span>
+        </div>
+        <div class="item" draggable="true" id="chemical3">
+            <img src="../ChemLabSimulation/images/hcl.png" alt="HCl">
+            <span>HCl</span>
+        </div>
+        <div class="item" draggable="true" id="chemical4">
+            <img src="../ChemLabSimulation/images/phenolphthalein.png" alt="Phenolphthalein">
+            <span>Phenolphthalein</span>
+        </div>
+        <button onclick="openChemicalInfo()" class="info-button">Chemical Infos</button>
+    </div>
     <div class="main">
         <div class="table" id="table">
             <div class="beaker" id="beaker">
@@ -31,8 +43,18 @@
             <button onclick="mixContents()">Mix</button>
         </div>
     </div>
-    <div class="info-box" id="infoBox"></div>
-    
+    <div id="chemicalInfoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeChemicalInfo()">&times;</span>
+            <h2>Chemical Information</h2>
+            <ul>
+                <li><strong>H₂O:</strong> Pure distilled water, neutral pH.</li>
+                <li><strong>NaOH:</strong> A strong base, commonly used in neutralization reactions.</li>
+                <li><strong>HCl:</strong> A strong acid, reacts vigorously with bases.</li>
+                <li><strong>Phenolphthalein:</strong> pH indicator, turns pink in basic solutions.</li>
+            </ul>
+        </div>
+    </div>
     <script src="../JS/create_chemical.js"></script>
 </body>
 </html>
