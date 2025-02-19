@@ -88,18 +88,20 @@ header {
 
 .info-box {
     position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 10px;
     border-radius: 5px;
     display: none;
     font-size: 14px;
-    max-width: 200px;
+    max-width: 2500px;
     text-align: center;
+    z-index: 1000;
+    pointer-events: none;
+    white-space: nowrap;
+    font-weight: bold;
 }
+
 
 .main {
     flex-grow: 1;

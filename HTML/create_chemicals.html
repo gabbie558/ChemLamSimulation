@@ -13,23 +13,27 @@
     </header>
 
     <div class="inventory">
+
+
+        
         <h2>Inventory</h2>
-        <div class="item" draggable="true" id="chemical1" onmouseover="showInfo('Phenolphthalein: pH indicator, turns pink in basic solutions.')" onmouseout="hideInfo()">
+        <div class="item" draggable="true" id="chemical1" data-description="Phenolphthalein: pH indicator, turns pink in basic solutions. (Purple)">
             <img src="../ChemLabSimulation/images/phenolphthalein.png" alt="Phenolphthalein">
             <span>Phenolphthalein Solution</span>
         </div>
-        <div class="item" draggable="true" id="chemical2" onmouseover="showInfo('NaOH: A strong base, commonly used in neutralization reactions.')" onmouseout="hideInfo()">
+        <div class="item" draggable="true" id="chemical2" data-description="NaOH: A strong base, commonly used in neutralization reactions.(Red)">
             <img src="../ChemLabSimulation/images/naoh.png" alt="NaOH Solution">
             <span>Sodium Hydroxide (NaOH) Solution</span>
         </div>
-        <div class="item" draggable="true" id="chemical3" onmouseover="showInfo('HCl: A strong acid, reacts vigorously with bases.')" onmouseout="hideInfo()">
+        <div class="item" draggable="true" id="chemical3" data-description="HCl: A strong acid, reacts vigorously with bases.(Yellow)">
             <img src="../ChemLabSimulation/images/hcl.png" alt="HCl Solution">
             <span>Hydrochloric Acid (HCl) Solution</span>
         </div>
-        <div class="item" draggable="true" id="chemical4" onmouseover="showInfo('H₂O: Pure distilled water, neutral pH.')" onmouseout="hideInfo()">
+        <div class="item" draggable="true" id="chemical4" data-description="H₂O: Pure distilled water, neutral pH.(White)">
             <img src="../ChemLabSimulation/images/water.png" alt="Water">
             <span>H₂O</span>
         </div>
+        
     </div>
 
     <div class="main">
@@ -60,6 +64,7 @@
             <p><strong>4. Color Changes:</strong> Watch how different chemicals mix and change colors.</p>
             <p><strong>5. Hover for Info:</strong> Hover over a chemical to see its description.</p>
         </div>
+        
     </div>
 
     <script src="../JS/create_chemical.js"></script>

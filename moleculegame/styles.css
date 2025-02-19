@@ -23,6 +23,43 @@ h1 {
     margin: 0;
     font-size: 2em;
 }
+.atom {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: lightgray;
+    cursor: grab;
+    user-select: none;
+}
+
+/* Tooltip Styling */
+.atom::after {
+    content: attr(data-description);
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    bottom: 120%; /* Position above the atom */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Show tooltip on hover */
+.atom:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
 
 /* Atoms Container */
 .atoms {

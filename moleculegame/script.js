@@ -121,7 +121,7 @@ window.addEventListener('click', (e) => {
 trashButton.addEventListener('click', () => {
     dropzone.innerHTML = ''; 
 });
-
+helpModal.style.display = 'block';
 // Open help modal
 helpButton.addEventListener('click', () => {
     helpModal.style.display = 'block';

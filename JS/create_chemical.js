@@ -91,10 +91,37 @@ function hideInfo() {
     infoBox.style.display = 'none';
 }
 
+document.getElementById("helpModal").style.display = "block";
+
 // Show Help Modal
 document.querySelector("header a").addEventListener("click", function(event) {
     event.preventDefault();
     document.getElementById("helpModal").style.display = "block";
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".item");
+    const infoBox = document.getElementById("infoBox");
+
+    items.forEach(item => {
+        item.addEventListener("mouseover", (event) => {
+            const description = event.currentTarget.getAttribute("data-description");
+            if (description) {
+                infoBox.textContent = description;
+                infoBox.style.display = "block";
+                infoBox.style.left = `${event.pageX + 10}px`;
+                infoBox.style.top = `${event.pageY + 10}px`;
+            }
+        });
+
+        item.addEventListener("mousemove", (event) => {
+            infoBox.style.left = `${event.pageX + 10}px`;
+            infoBox.style.top = `${event.pageY + 10}px`;
+        });
+
+        item.addEventListener("mouseout", () => {
+            infoBox.style.display = "none";
+        });
+    });
 });
 
 // Close Help Modal
