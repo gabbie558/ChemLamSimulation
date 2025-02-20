@@ -4,43 +4,146 @@
     <meta charset="utf-8" />
     <title>Interactive Learning</title>
     <link rel="stylesheet" href="../CSS/learning.css" />
+    <style>
+      /* Modal Styles */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      }
+
+      .modal-content {
+        background-color: #fff;
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .close:hover {
+        color: #000;
+      }
+
+      .modal h2 {
+        margin-top: 0;
+      }
+
+      .modal button {
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .modal button:hover {
+        background-color: #45a049;
+      }
+    </style>
   </head>
   <body>
     <header>
-     <h1>Choose a Molecules</h1> 
-     <div id="controls-button">
+      <h1>Choose a Molecule</h1>
+      <div id="controls-button">
         <button onclick="location.href='index.html'">Back to Homepage</button>
-     </div>
+        <button id="helpLink">Need Help?</button>
+      </div>
     </header>
 
     <main>
       <div class="back-button">
         <button onclick="location.href='index.html'">Back to Homepage</button>
-    </div>
+      </div>
 
-    <div class="container">
+      <div class="container">
         <div class="card" onclick="location.href='glucose.html'">
-            <img src="../ChemLabSimulation/images/glucose.jpg" alt="Glucose">
-            <h3>Glucose</h3>
-            <p>A simple sugar that fuels our bodies.</p>
+          <img src="../ChemLabSimulation/images/glucose.jpg" alt="Glucose">
+          <h3>Glucose</h3>
+          <p>A simple sugar that fuels our bodies.</p>
         </div>
         <div class="card" onclick="location.href='water.html'">
-            <img src="../ChemLabSimulation/images/water2.jpg" alt="Water">
-            <h3>Water</h3>
-            <p>The essential molecule for life.</p>
+          <img src="../ChemLabSimulation/images/water2.jpg" alt="Water">
+          <h3>Water</h3>
+          <p>The essential molecule for life.</p>
         </div>
         <div class="card" onclick="location.href='caffeine.html'">
-            <img src="../ChemLabSimulation/images/caffeine.jpeg" alt="Caffeine">
-            <h3>Caffeine</h3>
-            <p>The stimulant found in coffee and tea.</p>
+          <img src="../ChemLabSimulation/images/caffeine.jpeg" alt="Caffeine">
+          <h3>Caffeine</h3>
+          <p>The stimulant found in coffee and tea.</p>
         </div>
         <div class="card" onclick="location.href='ammonia.html'">
-            <img src="../ChemLabSimulation/images/ammonia.png" alt="Ammonia">
-            <h3>Ammonia</h3>
-            <p>A compound used in cleaning and fertilizers.</p>
+          <img src="../ChemLabSimulation/images/ammonia.png" alt="Ammonia">
+          <h3>Ammonia</h3>
+          <p>A compound used in cleaning and fertilizers.</p>
         </div>
-    </div>
+      </div>
     </main>
-    
+
+    <!-- Help Modal -->
+<div id="helpModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+    <div class="slide active" data-index="0">
+      <h2>Need Help?</h2>
+      <p>Welcome to the Interactive Learning platform! Click on any molecule card to explore. You can rotate molecules by holding them with your mouse.</p>
+      <button class="nextBtn">⟶</button>
+    </div>
+
+    <div class="slide" data-index="1">
+      <h2>Glucose</h2>
+      <p>Learn how this sugar fuels your body.</p>
+      <img src="../ChemLabSimulation/images/glucoseModal.png" alt="Glucose">
+      <button class="backBtn">⟵</button>
+      <button class="nextBtn">⟶</button>
+    </div>
+
+    <div class="slide" data-index="2">
+      <h2>H<sub>2</sub>O</h2>
+      <p>Discover why it's essential for life.</p>
+      <img src="../ChemLabSimulation/images/h2oModal.png" alt="Water">
+      <button class="backBtn">⟵</button>
+      <button class="nextBtn">⟶</button>
+    </div>
+
+    <div class="slide" data-index="3">
+      <h2>Caffeine</h2>
+      <p>Understand its stimulating effects.</p>
+      <img src="../ChemLabSimulation/images/caffeineModal.png" alt="Caffeine">
+      <button class="backBtn">⟵</button>
+      <button class="nextBtn">⟶</button>
+    </div>
+
+    <div class="slide" data-index="4">
+      <h2>Ammonia</h2>
+      <p>Explore its uses in everyday products.</p>
+      <img src="../ChemLabSimulation/images/ammoniaModal.png" alt="Ammonia">
+      <button class="backBtn">⟵</button>
+      <button id="closeModalBtn">Finish</button>
+    </div>
+  </div>
+</div>
+
+
+    <script src="../JS/learning.js"></script> 
   </body>
 </html>

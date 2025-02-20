@@ -3,11 +3,13 @@ let liquidLevel = 0;
 let colorMix = [];
 let currentContainer = 'beaker';
 
+// Drag and drop functionality
 document.querySelectorAll('.item').forEach(item => {
     item.addEventListener('dragstart', function(event) {
         draggedItem = event.target.id;
     });
 });
+
 
 document.getElementById('table').addEventListener('dragover', function(event) {
     event.preventDefault();
@@ -19,7 +21,7 @@ document.getElementById('table').addEventListener('drop', function(event) {
     if (draggedItem && draggedItem.startsWith('chemical')) {
         let liquid = document.getElementById('liquid');
 
-        // Corrected color mapping using hex codes
+        // Color mapping using hex codes
         let colors = {
             chemical1: '#8A2BE2',  // Phenolphthalein (Purple)
             chemical2: '#FF0000',  // NaOH (Red)
@@ -36,7 +38,7 @@ document.getElementById('table').addEventListener('drop', function(event) {
 
             // Store previous color before mixing
             colorMix.push(newColor);
-            
+
             // Blend colors using gradient
             let mixedColor = mixColors(colorMix);
             liquid.style.background = mixedColor;
@@ -79,25 +81,7 @@ function mixContents() {
     }, 2000);
 }
 
-// Show and hide info box
-function showInfo(text) {
-    let infoBox = document.getElementById('infoBox');
-    infoBox.innerText = text;
-    infoBox.style.display = 'inline';
-}
-
-function hideInfo() {
-    let infoBox = document.getElementById('infoBox');
-    infoBox.style.display = 'none';
-}
-
-document.getElementById("helpModal").style.display = "block";
-
-// Show Help Modal
-document.querySelector("header a").addEventListener("click", function(event) {
-    event.preventDefault();
-    document.getElementById("helpModal").style.display = "block";
-});
+// Info box (hover over chemicals)
 document.addEventListener("DOMContentLoaded", () => {
     const items = document.querySelectorAll(".item");
     const infoBox = document.getElementById("infoBox");
@@ -124,7 +108,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// ------------------------- 📝 Help Modal Navigation -------------------------
+let currentPageIndex = 0;
+const helpPages = document.querySelectorAll('.help-page');
+
+// Show the correct help page
+function showHelpPage(index) {
+    helpPages.forEach((page, i) => {
+        page.style.display = i === index ? 'block' : 'none';
+    });
+}
+
+// Next button functionality
+function nextPage() {
+    if (currentPageIndex < helpPages.length - 1) {
+        currentPageIndex++;
+        showHelpPage(currentPageIndex);
+    }
+}
+
+// Back button functionality
+function previousPage() {
+    if (currentPageIndex > 0) {
+        currentPageIndex--;
+        showHelpPage(currentPageIndex);
+    }
+}
+
 // Close Help Modal
 function closeHelp() {
     document.getElementById("helpModal").style.display = "none";
+    currentPageIndex = 0; // Reset to the first page when closed
+    showHelpPage(currentPageIndex);
 }
+
+// Open Help Modal when 'Need Help?' is clicked
+document.querySelector("#helpLink").addEventListener("click", function(event) {
+    event.preventDefault();
+    document.getElementById("helpModal").style.display = "block";
+    showHelpPage(currentPageIndex); // Always start from the first help page
+});
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("helpModal").style.display = "block";
+    showHelpPage(0); // Show the first help page by default
+});

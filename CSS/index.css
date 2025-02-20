@@ -1,26 +1,23 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #dff6ff, #b2ebf2);
+    background: #ADD8E6;
+    color: white;
     text-align: center;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    justify-content: center;
+    padding: 0;
+
 }
 
 header {
     background: rgba(58, 58, 74, 0.9);
     color: #74c365;
     padding: 20px;
-    font-size: 28px;
+    font-size: 50px;
     font-weight: 700;
-    border-radius: 10px;
     backdrop-filter: blur(10px);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    width: 90%;
-    margin-top: 20px;
+    padding: 60px;
+    
 }
 
 .container {
@@ -33,7 +30,7 @@ header {
 
 .card {
     width: 280px;
-    background: rgba(255, 255, 255, 0.2);
+    background: #45495A;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -50,7 +47,7 @@ header {
 
 .card img {
     width: 100%;
-    border-radius: 15px;
+    border-radius: 45px;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -61,7 +58,7 @@ header {
 .card h3 {
     margin: 15px 0 10px;
     font-size: 22px;
-    color: #333;
+    color: #f7f7f7;
     font-weight: 600;
     transition: color 0.3s ease-in-out;
 }
@@ -72,7 +69,7 @@ header {
 
 .card p {
     font-size: 16px;
-    color: #555;
+    color: #b6b2b2;
     line-height: 1.5;
 }
 
@@ -113,7 +110,7 @@ button:hover {
 }
 
 .modal-content {
-    background: white;
+    background: #3a3a4a;
     padding: 20px;
     border-radius: 10px;
     width: 70%;
@@ -171,10 +168,10 @@ button:hover {
     
     position: fixed;
     bottom: 20px;
-    left: 20px;
-    top: 890px;
+   
+    
     right: 2400px;
-    background-color: #74c365;
+    background-color: #45495A ;
     color: white;
     border: none;
     padding: 15px 30px;

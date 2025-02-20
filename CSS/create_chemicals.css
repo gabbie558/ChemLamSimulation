@@ -2,7 +2,7 @@ body {
     display: flex;
     flex-direction: row;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #dff6ff, #b2ebf2);
+    background: linear-gradient(to right, #dff6ff, #a9dee6);
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -10,8 +10,8 @@ body {
 }
 
 header {
-    background: linear-gradient(to right, #000000, #d8d8d8);
-    color: rgb(0, 0, 0);
+    background: #3a3a4a;
+    color: #74C365;
     padding: 20px;
     font-size: 28px;
     font-weight: 700;
@@ -31,7 +31,7 @@ header {
 
 .inventory {
     width: 20%;
-    background:linear-gradient(to bottom, #000000, #d8d8d8);
+    background:#3a3a4a;
     border-right: 2px solid black;
     padding: 20px;
     box-sizing: border-box;
@@ -109,7 +109,8 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to top, #f0faff, #383838);
+    background: #ADD8E6;
+
 }
 
 .table {
@@ -118,7 +119,7 @@ header {
     border: 2px solid black;
     border-radius: 8px;
     position: relative;
-    background: rgba(196, 184, 170, 0.9);
+    background: rgb(236, 236, 236);
     overflow: hidden;
     backdrop-filter: blur(5px);
 }
@@ -216,7 +217,7 @@ header {
     top: 50%;
     transform: translate(-50%, -50%);
     width: 50%;
-    background: linear-gradient(to right, #242729, #a3a3a3);
+    background: linear-gradient(to right, #88caf7, hsl(199, 100%, 73%));
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -242,4 +243,109 @@ header {
 }
 a{
     font-size: 16px;
+}
+
+#helpLink{
+    color:rgb(145, 195, 243);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 19px;;
+}
+
+#helpLink:hover{
+    color:rgb(243, 145, 145);
+}
+/* Modal Backdrop */
+.modal-backdrop {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dim background */
+    z-index: 999;
+}
+
+/* Help Modal */
+.help-modal {
+    display: none; /* Hidden initially */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    background: #3a3a4a;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -55%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.help-content {
+    position: relative;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 70vh; /* Prevent overflow on smaller screens */
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: red;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: darkred;
+}
+
+#helpLink {
+    color: rgb(145, 195, 243);
+    font-size: 19px;
+    text-decoration: none;
+}
+
+#helpLink:hover {
+    color: rgb(243, 145, 145);
+}
+
+/* Buttons inside modal */
+.help-content button {
+    margin: 10px;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #3a3a4a;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.help-content button:hover {
+    background: #5a5a6a;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border: 2px solid #ffffff;
+}
+
+.modal-buttons button {
+    padding: 10px 20px;
+    border: 1px solid #ffffff;
 }
