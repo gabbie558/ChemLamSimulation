@@ -165,13 +165,10 @@ button:hover {
 }
 
 #back {
-    
     position: fixed;
     bottom: 20px;
-   
-    
-    right: 2400px;
-    background-color: #45495A ;
+    right: 1390px; /* Adjusted to be visible across all screen sizes */
+    background-color: #45495A;
     color: white;
     border: none;
     padding: 15px 30px;
