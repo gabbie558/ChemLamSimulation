@@ -1,7 +1,7 @@
 /* General Styling */
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #141e30, #243b55);
+    background: #ADD8E6;
     color: white;
     text-align: center;
     margin: 0;
@@ -10,10 +10,12 @@ body {
 
 /* Header */
 header {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    border-radius: 10px;
-    margin: 20px auto;
+    background: #3A3A4A;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: 0px auto;
     width: 60%;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -22,6 +24,43 @@ header {
 h1 {
     margin: 0;
     font-size: 2em;
+}
+.atom {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: lightgray;
+    cursor: grab;
+    user-select: none;
+}
+
+/* Tooltip Styling */
+.atom::after {
+    content: attr(data-description);
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    bottom: 120%; /* Position above the atom */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Show tooltip on hover */
+.atom:hover::after {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Atoms Container */
@@ -34,6 +73,7 @@ h1 {
 
 /* Atom Styling */
 .atom {
+    margin-top: 10px;
     width: 60px;
     height: 60px;
     line-height: 60px;
@@ -59,15 +99,15 @@ h1 {
 
 /* Dropzone */
 .dropzone {
-    width: 350px;
-    height: 150px;
+    width: 600px;
+    height: 250px;
     margin: auto;
-    border: 3px dashed rgba(255, 255, 255, 0.6);
+    border: 3px dashed rgba(12, 9, 9, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.315);
     border-radius: 12px;
     backdrop-filter: blur(10px);
     transition: border-color 0.3s ease;
@@ -145,7 +185,7 @@ h1 {
     transform: translate(-50%, -50%);
     width: 90%;
     max-width: 500px;
-    background: linear-gradient(to right, #222f47, #5e8abd);
+    background: rgb(58,58,74);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -160,6 +200,8 @@ h1 {
     width: 100%;
 }
 
+
+
 #modal-image {
     max-width: 150px;
     display: block;
@@ -167,7 +209,6 @@ h1 {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
 }
-
 
 .close {
     position: absolute;
@@ -208,9 +249,9 @@ h1 {
     transition: 0.3s ease-in-out;
 }
 #next-help, #prev-help {
-    background-color: #007BFF;
+    background-color: rgb(58,58,74);
     color: white;
-    border: none;
+    border: 1px solid white;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -219,17 +260,21 @@ h1 {
     transition: 0.3s ease-in-out;
 }
 
+#next-help:hover, #prev-help:hover {
+    background-color: #292d31;
+}
+
 .help-button:hover {
     background-color: #0056b3;
 }
 
 #modal-pic {
-    max-width: 100px;  /* Adjust this size as needed */
-    max-height: 200px; /* Ensure it doesn't get too large */
-    width: auto; /* Maintain aspect ratio */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100px;  
+    max-height: 200px; 
+    width: auto; 
+    height: auto; 
     display: block;
-    margin: 10px auto; /* Center the image */
+    margin: 10px auto; 
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
 }

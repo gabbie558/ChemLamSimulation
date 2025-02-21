@@ -8,42 +8,59 @@
     <link rel="stylesheet" href="../CSS/about.css">
 </head>
 <body>
-    <div class="container details">
+    <div class="container details" id="aboutSystem">
         <h1 class="text-center">About Us</h1>
         <p class="text-center">Welcome to our platform! Learn more about our system and the team behind it.</p>
 
-        <h2 class="details">Our System</h2>
-        <p>
-            Our web application is designed to help STEM students enhance their understanding of Chemistry through interactive features. With three core functionalities—Create Chemicals, Interact with Molecules, and Interactive Learning—students can visualize chemical elements, experiment with their reactions, and explore molecular compositions in an engaging way. This system aims to bridge the gap between theoretical learning and practical application, making Chemistry more accessible and interactive.
-        </p>
+        <section class="system-section">
+            <h2>Our System</h2>
+            <p>
+                Our web application is designed to help STEM students enhance their understanding of Chemistry through interactive features. 
+                With three core functionalities—Create Chemicals, Interact with Molecules, and Interactive Learning—students can visualize chemical elements, 
+                experiment with their reactions, and explore molecular compositions in an engaging way. This system aims to bridge the gap between theoretical 
+                learning and practical application, making Chemistry more accessible and interactive.
+            </p>
+        </section>
+        <button class="command"id="learn-more" class="btn btn-primary" id="DevButton">Developers</button>
+    </div>
 
-        <h2 class="details">Our Team</h2>
+    <!-- New container for "Our Team" -->
+    <div class="container team-section" class="team-member" style="display: none;" id="aboutTeam">
+        <h2 class="text-center">Our Team</h2>
         <div class="row">
             <div class="team-member-info">
-                <img src="https://dummyimage.com/300" alt="Team Leader">
-                <h4>Ramirez</h4>
-                <p>Project Leader / System Developer</p>
+                <img src="../ChemLabSimulation/images/Jeff.png" alt="Team Leader">
+                <h4>Jeffrey Ramirez</h4>
+                <p>Product Owner</p>
             </div>
             <div class="team-member-info">
-                <img src="https://dummyimage.com/300" alt="System Architect">
-                <h4>Maniflor</h4>
-                <p>System Architect</p>
+                <img src="../ChemLabSimulation/images/Jen.png" alt="System Architect">
+                <h4>Jensha Maniflor</h4>
+                <p>UI/UX Designer</p>
             </div>
             <div class="team-member-info">
-                <img src="https://dummyimage.com/300" alt="Feature Developer">
-                <h4>Enriquez</h4>
-                <p>Feature Developer</p>
+                <img src="../ChemLabSimulation/images/Gab.png" alt="Feature Developer">
+                <h4>Gabriela Enriquez</h4>
+                <p>UI/UX Designer/ System Developer</p>
             </div>
             <div class="team-member-info">
-                <img src="https://dummyimage.com/300" alt="Technology Specialist">
-                <h4>Buitizon</h4>
-                <p>Technology Specialist</p>
+                <img src="../ChemLabSimulation/images/Marc.png" alt="Technology Specialist">
+                <h4>Marc Rainier Buitizon</h4>
+                <p>System Developer</p>
             </div>
         </div>
-        <div class="text-center details">
-            <button id="back" class="btn btn-primary" onclick="window.location.href='index.html'">Back</button>
+
+        <div class="text-center">
+            
+            <button class="command" class="btn btn-primary" id="systemButton">About System</button>
+            <button class="command"class="btn btn-primary" onclick="window.location.href='index.html'">Enter To Laboratory</button>
         </div>
+        
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+
+    <script src="../JS/about.js"></script>
+
 </body>
 </html>

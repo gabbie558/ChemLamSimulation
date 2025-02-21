@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const btn = document.getElementById("helpButton");
     const closeBtn = document.querySelector(".close");
 
+
+     modal.style.display = "flex";
+
+
     // Open Modal
     btn.addEventListener("click", function () {
         modal.style.display = "flex";
